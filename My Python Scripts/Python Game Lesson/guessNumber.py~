@@ -1,0 +1,79 @@
+"""
+The week two mini-project, guess the number
+"""
+
+import random
+import math
+import simpleguitk as simplegui
+
+# Global variables, all intensionally initialised to -1
+
+playerGuess = -1	# player's guess
+guessRemain = -1	# player's remaining number of guesses
+secretNum = -1		# the secret number in the game
+message = "Guess the secret number"	# message in the canvas
+
+# Help functions
+
+def new_game():
+	# initialise all global variables whenever a game is started
+	secretNum = random.randrange(0, 100)
+	guessRemain = 7
+# end of new_game() definition
+
+# Define event handlers
+
+def range100():
+	"""
+	button handler that changes the range to [0, 100) and initiate a new game
+	"""
+	pass
+# end of range100() definition
+
+def range1000():
+	"""
+	button handler that changes the range to [0, 1000) and initiate a new game
+	"""
+	pass
+# end of range1000() definition
+
+def draw(canvas):
+	# handler to draw on the canvas
+	canvas.draw_text(message, [10, 58], 28, "white")
+# end of draw(canvas) defintion
+
+def input_guess(guess):
+	"""
+	the main handler with the game logic, the function receives the
+	player's input and determine whether the player guesses correctly
+	"""
+	print "Guess was " + guess
+
+	global guessRemain
+	guessRemain -= 1		# remaining chance reduced by 1
+
+	global playerGuess
+	playerGuess = int(guess)	# update player's guess
+
+	if not(playerGuess == secretNum):
+		if playerGuess > secretNum:	# guess is too large
+			print "Lower"
+		else:				# guess is too small
+			print "Higher"
+	else:
+		global message
+		message = "Good job"
+		print "Correct!"
+	# end if-else
+# end of input_guess(guess) definition
+
+# Create a frame
+
+frame = simplegui.create_frame("Guess a number", 300, 100)
+frame.set_draw_handler(draw)
+
+# Register event handler and start frame
+frame.start()
+
+# call a new_game
+

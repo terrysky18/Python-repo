@@ -1,0 +1,19 @@
+week 0 mini project
+http://www.codeskulptor.org/#user37_k6vNGYhUCv_0.py
+
+week 2 mini project
+http://www.codeskulptor.org/#user38_bUv2jzinSF_0.py
+http://www.codeskulptor.org/#user38_Gtj406rhp4_1.py
+
+week 3 quiz code
+draws a lorry
+http://www.codeskulptor.org/#user38_b1be2clVzL_0.py
+
+week 3 mini project: stop watch game
+http://www.codeskulptor.org/#user38_GdYzADgDFA_1.py
+
+week 4 mini project: pong game
+http://www.codeskulptor.org/#user38_KATbqlZi4X_2.py
+
+week 7 mini project
+http://www.codeskulptor.org/#user38_AM2cv6T9UQ_2.py

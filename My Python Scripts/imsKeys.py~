@@ -1,0 +1,58 @@
+# from sys import argv
+from Tkinter import Tk	# needed to copy key clipboard
+
+# script, key_select = argv
+
+copier = Tk()	# create copier object from Tk class
+
+copier.withdraw()
+copier.clipboard_clear()	#clear the clipboard
+
+# IMS licence keys
+licences = {1:["cmsOnly", "79427457458150042113"],
+			2:["tdsOnly", "16994300676501400670"],
+			3:["invsOnly", "28411271575728174727"],
+			4:["cmsNtds", "96771050191964281052"],
+			5:["cmsNinvs", "03503762135007010555"],
+			6:["tdsNinvs", "86068143661589810660"],
+			7:["allThree", "53019390921719757698"]}
+
+print 'available IMS licence keys'
+for key in licences:
+	print key, ': ', licences[key][0]
+
+key_select = input('which key to use? ')
+
+if ('1' in key_select):
+	print "CMS only"
+	copier.clipboard_append(cmsOnly)
+	
+elif ('2' in key_select):
+	print "TDS only"
+	copier.clipboard_append(tdsOnly)
+	
+elif ('3' in key_select):
+	print "Invisibility only"
+	copier.clipboard_append(invsOnly)
+
+elif ('4' in key_select):
+	print "CMS and TDS"
+	copier.clipboard_append(cmsNtds)
+
+elif ('5' in key_select):
+	print "CMS and Invisibility"
+	copier.clipboard_append(cmsNinvs)
+
+elif ('6' in key_select):
+	print "TDS and Invisibility"
+	copier.clipboard_append(tdsNinvs)
+
+elif ('7' in key_select):
+	print "CMS, TDS, Invisibility"
+	copier.clipboard_append(allThree)
+	
+else:
+	print 'Parameter not recognised'
+	pass
+
+copier.destroy()

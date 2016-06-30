@@ -1,0 +1,48 @@
+# Implementation of classic arcade game pong
+
+import simpleguitk as simplegui
+import random
+
+# initialise global variables
+# pos and vel encode vertical information for paddels
+WIDTH = 600
+HEIGHT = 400
+BALL_RADIUS = 20
+PAD_WIDTH = 8
+PAD_HEIGHT = 80
+HALF_PAD_WIDTH = PAD_WIDTH / 2
+HALF_PAD_HEIGHT = PAD_HEIGHT / 2
+LEFT = False
+RIGHT = True
+
+ball_pos = [0, 0]		# ball position
+ball_vel = [0, 0]		# ball velocity
+
+# the paddles only have linear movements, so position and velocity are numbers
+Lpaddle_pos = 0		# left paddle position
+Lpaddle_vel = 0		# left paddle velocity
+
+Rpaddle_pos = 0		# right paddle position
+Rpaddle_pos = 0		# right paddle position
+
+Lscore = 0		# left player score
+Rscore = 0		# right player score
+"""
+initialise ball_pos and ball_vel for new ball in the centre of the table
+if direction is RIGHT, the ball's velocity is upper right, else upper left
+"""
+def spawn_ball(direction):
+	global ball_pos, ball_vel	# these are stored as lists
+
+# define event handlers
+def new_game():
+	global Lpaddle_pos, Lpaddle_vel, Rpaddle_pos, Rpaddle_vel
+	global Lscore, Rscore
+
+def draw(canvas):
+	global Lscore, Rscore, Lpaddle_pos, Rpaddle_pos, ball_pos, ball_vel
+
+	# draw mid line and gutter lines
+	canvas.draw_line([WIDTH / 2, 0], [WIDTH / 2, HEIGHT], 1, "white")
+	canvas.draw_line([PAD_WIDTH, 0], [PAD_WIDTH, HEIGHT], 1, "white")
+	canvas.draw_line([WIDTH - PAD_WIDTH, 0], [WIDTH - PAD_WIDTH, HEIGHT],

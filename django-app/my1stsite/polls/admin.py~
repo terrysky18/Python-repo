@@ -1,0 +1,20 @@
+from django.contrib import admin
+
+# Register your models here.
+# from djangoproject.com tutorial
+# add Question model to have the admin interface shown in the web app
+
+from .models import Question
+
+class QuestionAdmin(admin.ModelAdmin):
+	# this re-orders the edit form on admin page
+	# first element of each tuple is the title of the fieldset
+	fieldsets = [
+		(None,	{"fields": ["question_text"]}),
+		("Date information", {"fields": ["pub_date"]}),
+		]
+
+# create a model admin object, pass it as 2nd argument
+# to customise the admin page
+admin.site.register(Question, QuestionAdmin)
+

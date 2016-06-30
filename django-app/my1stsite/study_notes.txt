@@ -1,0 +1,15 @@
+the 3-step guide to making model changes in Django project
+1.  Change my models; in models.py
+2.  Run 'python manage.py makemigrations' to create migrations for those
+changes
+3.  Run 'python manage.py migrate' to apply those changes to the database
+
+Django source files:
+When having difficulty finding where the Django source files are located
+on the system, run the following command
+
+$ python -c "import sys
+sys.path = sys.path[1:]
+import django
+print(django.__path__)"
+
