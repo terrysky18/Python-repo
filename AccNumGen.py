@@ -5,7 +5,12 @@ It generates an account number to be used for testing in different environment
 
 import random
 import argparse
-from Tkinter import Tk
+
+try:
+	from Tkinter import Tk
+except ImportError:
+	from tkinter import Tk
+
 import string		# needed to create alphabet list
 
 # debugger boolean
