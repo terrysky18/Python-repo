@@ -110,7 +110,7 @@ if __name__ == '__main__':
 	use_spec = my_args.special_char
 	use_log = my_args.gen_pass_log
 
-	Password_file = r"C:\Users\jsong\Documents\Python scripts\py-Logs\test_pass.txt"
+	Password_file = r"C:\Users\Terry Song\Documents\Repository\Python-repo\py-Logs\test_pass.txt"
 	my_logger = FileWriter(Password_file)
 	my_stuff = GenPassW(char_num, use_spec)
 
